@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  database:
+    container_name: olympics_db_container
+    build: 
+        context: .
+    volumes:
+        - ./olympics_db_data:/var/lib/postgresql/data
+    environment:
+        POSTGRES_HOST: postgres
+        POSTGRES_DB: postgres
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+    ports:
+        - 5432:5432    
+volumes:
+    olympics_db_data: 
